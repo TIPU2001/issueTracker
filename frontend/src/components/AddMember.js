@@ -77,6 +77,11 @@ const AddMember = () => {
             }
     
           }else{
+            Swal.fire({
+              icon: "error",
+              title: "Not Found",
+              text: "Email not found",
+            });
             console.log('user not found');
           }
         })

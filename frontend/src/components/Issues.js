@@ -110,7 +110,7 @@ const Issues = () => {
                         </div>
                       </div>
 
-                      <div class="form-outline mb-4"> <input type="text" value={values.team} onChange={handleChange} id="team" class="form-control"/> <label
+                      <div class="form-outline mb-4"> <input type="text" value={values.team} onChange={handleChange} id="team" class="form-control" disabled/> <label
                           class="form-label" for="team" style={{marginLeft: "0px;"}}>Team</label>
                         <div class="form-notch">
                           <div class="form-notch-leading" style={{width: "9px"}}></div>
@@ -119,7 +119,7 @@ const Issues = () => {
                         </div>
                       </div>
 
-                  <div class="form-outline mb-4"> <input type="text" value={values.assignedTo} onChange={handleChange} id="assignTo" class="form-control"/> <label
+                  <div class="form-outline mb-4"> <input type="text" value={values.assignedTo} onChange={handleChange} id="assignedTo" class="form-control"/> <label
                           class="form-label" for="assignTo" style={{marginLeft: "0px;"}}>Assigned To</label>
                         <div class="form-notch">
                           <div class="form-notch-leading" style={{width: "9px"}}></div>

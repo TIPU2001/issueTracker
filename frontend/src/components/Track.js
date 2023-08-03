@@ -85,7 +85,7 @@ const Track = () => {
 
 
   const updateStatus = async (issueid) => {
-    const res = fetch(url + "/issue/update/" + issueid, {
+    const res = await fetch(url + "/issue/update/" + issueid, {
       method: "PUT",
       body: JSON.stringify({ status: "solved" }),
       headers: {
@@ -93,6 +93,7 @@ const Track = () => {
       },
     })
 
+    console.log(res.status);
     if (res.status === 200) {
       console.log("updated")
       getDataFromBackend()
@@ -100,7 +101,7 @@ const Track = () => {
   }
 
   const updateStatusOpen = async (issueid) => {
-    const res = fetch(url + "/issue/update/" + issueid, {
+    const res = await fetch(url + "/issue/update/" + issueid, {
       method: "PUT",
       body: JSON.stringify({ status: "new" }),
       headers: {
@@ -158,8 +159,8 @@ const Track = () => {
                     <h4>Type : {type}</h4>
                     <h4>Team :  {currentUser.team ? currentUser.team.title :"No Team Created"}</h4>
                    
-                    <h4>Assign Name : {assignedBy.name}</h4>
-                    <h4>Time : {new Date(createdAt).toLocaleDateString()}</h4>
+                    <h4>Assigned By : {assignedBy.name}</h4>
+                    <h4>Date & Time : {new Date(createdAt).toLocaleDateString()} {new Date(createdAt).toLocaleTimeString()}</h4>
                     <h4>Organisation : {org}</h4>
                     <h4>Status : {statusFun(status)} </h4>
                     <Button color="error" variant="contained" onClick={(e) => updateStatus(_id)}>
